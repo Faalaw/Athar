@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-lg athar-navbar">
+    <div class="container">
+
+        <a href="https://www.iau.edu.sa/en/home"
+   target="_blank" rel="noopener noreferrer">
+    <img src="${pageContext.request.contextPath}/images/iau-logo.png"
+         alt="University Logo" class="brand-logo">
+</a>
+
+<a class="navbar-brand"
+   href="${pageContext.request.contextPath}/login.jsp">
+    <span class="brand-name">Athar</span>
+</a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#atharNavbar"
+                aria-controls="atharNavbar"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="atharNavbar">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <%
+                    String role = (String) session.getAttribute("role");
+                %>
+
+                <% if ("STUDENT".equals(role)) { %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.request.contextPath}/studentDashboard.jsp">
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.request.contextPath}/search.jsp">
+                            Search Items
+                        </a>
+                    </li>
+
+                <% } else if ("ADMIN".equals(role)) { %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.request.contextPath}/adminDashboard.jsp">
+                            Admin Dashboard
+                        </a>
+                    </li>
+                <% } %>
+
+                <% if (role != null) { %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.request.contextPath}/LogoutServlet">
+                            Logout
+                        </a>
+                    </li>
+                <% } %>
+
+            </ul>
+        </div>
+
+    </div>
+</nav>
+               

@@ -1,0 +1,227 @@
+:root {
+    --athar-navy: #2c3c64;
+    --athar-navy-deep: #1b2744;
+    --athar-steel: #8da2c4;
+    --athar-mist: #eef1f8;
+    --athar-line: #dde3ef;
+    --athar-ink: #1b2233;
+    --athar-muted: #5d6881;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eef1f8;
+    color: #1b2233;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+a {
+    color: var(--athar-navy);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--athar-steel);
+}
+button {
+    background-color: var(--athar-navy);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--athar-navy-deep);
+}
+input[type="email"],
+input[type="password"]  {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--athar-line);
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus  {
+    border-color: var(--athar-navy);
+}
+label {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--athar-ink);
+    font-weight: 600;
+}
+
+.athar-navbar {
+    background: #fff;
+    border-bottom: 1px solid var(--athar-line);
+    padding-block: .6rem;
+}
+.athar-navbar .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: .9rem;
+    padding: 0;
+}
+.athar-navbar .brand-logo {
+    height: 46px;
+    width: auto;
+}.athar-navbar .brand-name {
+    padding-left: .9rem;
+    border-left: 1px solid var(--athar-line);
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: var(--athar-navy);
+}
+.athar-navbar .nav-link {
+    color: var(--athar-muted);
+    font-weight: 600;
+}
+
+.athar-navbar .nav-link:hover,
+.athar-navbar .nav-link.active {
+    color: var(--athar-navy);
+}
+.athar-footer {
+    flex-shrink: 0;
+    background: var(--athar-navy-deep);
+    color: #c9d2e6;
+    padding-block: 1.4rem;
+    font-size: .92rem;
+}
+.login-wrap {
+    min-height: calc(100vh - 150px);
+}
+.login-wrap > .row {
+    min-height: inherit;
+}
+.login-aside {
+    position: relative;
+    overflow: hidden;
+    background: url("../images/campus.jpeg") center center / cover no-repeat; 
+    color: #fff;
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+     min-height: inherit;
+
+}
+
+.login-aside::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(27, 39, 68, 0.58);}
+
+.login-aside > * {
+    position: relative;
+    margin-left: 10rem;
+}
+.login-aside h1 {
+    color: #fff;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    margin-bottom: .75rem;
+}
+.login-aside p {
+    color: #d5dcee;
+    max-width: 30ch;
+    margin: 0;
+    margin-left: 15rem;
+    text-align: center;
+
+
+}
+.login-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 1.25rem;
+}
+.login-card {
+    width: 100%;
+    max-width: 420px;
+    background: #fff;
+    padding: 2rem;
+    border: 1px solid var(--athar-line);
+    border-radius: 1rem;
+    box-shadow: 0 8px 30px rgba(27, 39, 68, .08);
+}
+.role-switch {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .5rem;
+}
+
+.role-switch input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.role-switch label {
+    text-align: center;
+    padding: .7rem .5rem;
+    border: 1px solid var(--athar-line);
+    border-radius: .7rem;
+    font-weight: 700;
+    color: var(--athar-muted);
+    cursor: pointer;
+    margin-bottom: 0;
+    transition: background-color .15s, color .15s, border-color .15s;
+}
+.role-switch input:checked + label {
+    background: var(--athar-navy);
+    border-color: var(--athar-navy);
+    color: #fff;
+}
+.role-switch input:focus-visible + label {
+    outline: 3px solid var(--athar-steel);
+    outline-offset: 2px;
+}
+@media (max-width: 991.98px) {
+    .login-aside {
+        padding: 2rem 1.5rem;
+        min-height: 190px;
+    }
+
+    .login-aside p {
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    text-align: center;
+}
+    .login-aside > * {
+    margin-left: 0;
+}
+
+.login-aside h1,
+.login-aside p {
+    text-align: center;
+}
+
+    .athar-navbar .brand-logo {
+        height: 38px;
+    }
+}
+button.btn.btn-athar {
+    display: block;
+    width: 100%;
+    background-color: #2c3c64;
+    color: #fff;
+    border: 1px solid #2c3c64;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.login-card h2 {
+    font-size: 1.6rem;
+}
